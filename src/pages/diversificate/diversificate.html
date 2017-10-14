@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Оптимальний портфель
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<!--   <ion-segment>
+    <ion-segment-button (click)="openTab('minRisk')">
+      Мінімальний ризик
+    </ion-segment-button>
+    <ion-segment-button (click)="openTab('maxRisk')">
+      Максимальний дохід
+    </ion-segment-button>
+  </ion-segment> -->
+  <page-max-risk *ngIf="tabStatus == 'maxRisk'"></page-max-risk>
+  <page-min-risk *ngIf="tabStatus == 'minRisk'"></page-min-risk>
+</ion-content>

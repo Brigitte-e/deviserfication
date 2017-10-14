@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Статистика
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="results" *ngFor='let total of totalStatistic; let i=index' padding>
+    <ion-grid>
+      <p>{{ total.currency }}</p>
+      <ion-row>
+        <ion-col col-md-10>
+          Прибуток
+        </ion-col>
+        <ion-col col-md-2>
+          {{ total.summa.toFixed(2) }}%
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-md-10>
+          Ризик
+        </ion-col>
+        <ion-col col-md-2>
+          {{ riskStatistic[i].riskValue.toFixed(2) }}%
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+<!--   <page-max-risk *ngIf="tabStatus == 'maxRisk'"></page-max-risk>
+  <page-min-risk *ngIf="tabStatus == 'minRisk'"></page-min-risk> -->
+</ion-content>

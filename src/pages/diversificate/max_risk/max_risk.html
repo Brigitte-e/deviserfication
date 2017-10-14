@@ -1,0 +1,35 @@
+<div padding>
+  <ion-item>
+    <ion-label>Виберіть валюти</ion-label>
+    <ion-select [(ngModel)]="currency" multiple="true" (ngModelChange)="onChange()">
+      <ion-option value="1">1</ion-option>
+      <ion-option value="2">2</ion-option>
+      <ion-option value="3">3</ion-option>
+      <ion-option value="4">4</ion-option>
+      <ion-option value="5">5</ion-option>
+    </ion-select>
+  </ion-item>
+  <div class="results" padding>
+    <p>Найвигідніша з вибраних валют</p>
+    <span>USA</span>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-md-6>
+          Прибуток
+        </ion-col>
+        <ion-col col-md-6>
+          5%
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-md-6>
+          Ризик
+        </ion-col>
+        <ion-col col-md-6>
+          3%
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+

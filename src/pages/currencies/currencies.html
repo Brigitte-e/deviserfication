@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Валюти
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <ion-label>Виберіть валюти</ion-label> -->
+    <div>
+      <ion-select class="currencies-select" [(ngModel)]="currency" (ngModelChange)="onChange()" placeholder="Виберіть валюту">
+        <ion-option *ngFor="let currency of currenciesArr; let i = index" value={{i}}>{{currency.currency}}</ion-option>
+      </ion-select>
+      
+      <ion-card>
+        <span class="curr-result" *ngIf="show">{{result}}</span>
+      </ion-card>
+    </div>
+</ion-content>

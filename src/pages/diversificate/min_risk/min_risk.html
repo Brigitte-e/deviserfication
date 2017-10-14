@@ -1,0 +1,66 @@
+<div padding>
+  <ion-item>
+    <ion-label>Виберіть валюти</ion-label>
+    <ion-select [(ngModel)]="currency" multiple="true" (ngModelChange)="onChange()">
+     <!--  <ion-option value="USD">USD</ion-option>
+      <ion-option value="CAD">CAD</ion-option>
+      <ion-option value="CZK">CZK</ion-option>
+      <ion-option value="GBP">GBP</ion-option>
+      <ion-option value="HUF">HUF</ion-option>
+      <ion-option value="JPY">JPY</ion-option>
+      <ion-option value="PLZ">PLZ</ion-option>
+      <ion-option value="RUB">RUB</ion-option>
+      <ion-option value="SKK">SKK</ion-option>
+      <ion-option value="SEK">SEK</ion-option>
+      <ion-option value="ILS">ILS</ion-option>
+      <ion-option value="EUR">EUR</ion-option> -->
+
+      <ion-option value="USD">USD</ion-option>
+      <ion-option value="SKK">SKK</ion-option>
+      <ion-option value="SEK">SEK</ion-option>
+      <ion-option value="RUB">RUB</ion-option>
+      <ion-option value="PLZ">PLZ</ion-option>
+      <ion-option value="JPY">JPY</ion-option>
+      <ion-option value="ILS">ILS</ion-option>
+      <ion-option value="HUF">HUF</ion-option>
+      <ion-option value="GBP">GBP</ion-option>
+      <ion-option value="EUR">EUR</ion-option>
+      <ion-option value="CZK">CZK</ion-option>
+      <ion-option value="CAD">CAD</ion-option>
+
+    </ion-select>
+  </ion-item>
+  <p class="result-title" *ngIf="show">Оптимальний портфель</p>
+  <ion-card class="card" *ngIf="show" padding>
+    <ion-grid>
+      <ion-row *ngFor="let item of currency;  let i = index">
+        <ion-col col-md-6>
+          {{item}}
+        </ion-col>
+        <ion-col col-md-6>
+          {{wT[currency.length-i-1].toFixed(2)}}% 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-grid class="portfolio-statistic" *ngIf="show">
+      <ion-row>
+        <ion-col col-md-6>
+          Ризик  
+        </ion-col>
+        <ion-col col-md-6>
+          {{risk.toFixed(2)}}% 
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-md-6>
+          Прибуток  
+        </ion-col>
+        <ion-col col-md-6>
+          {{get[0].toFixed(2)}}% 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</div>
+
